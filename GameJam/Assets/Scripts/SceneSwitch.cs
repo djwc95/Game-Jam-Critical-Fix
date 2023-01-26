@@ -24,10 +24,15 @@ public class SceneSwitch : MonoBehaviour
     }
     public void LoadStore2() 
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(6);
     }
     public void LoadLvl2()
     {
         SceneManager.LoadScene(5);
+    }
+
+    public void LoadDeathScene()
+    {
+        SceneManager.LoadScene(4);
     }
 }

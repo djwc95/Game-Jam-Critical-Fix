@@ -6,7 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Sword
-  - WarningZone
+  - UiCanvas
+  - KillSwitch
   layers:
   - Default
   - TransparentFX

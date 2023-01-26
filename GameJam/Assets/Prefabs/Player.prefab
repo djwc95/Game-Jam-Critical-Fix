@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 6649795209817127717}
   - component: {fileID: 6649795209817127716}
   - component: {fileID: 1804890290}
+  - component: {fileID: 5920753688285020247}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -214,12 +215,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   currentHealth: 0
-  vulnerable: 0
-  healthText: {fileID: 0}
   dmgFlash: {fileID: 0}
   armor: 0
+  maxArmor: 1
+  killAll: {fileID: 8272248500648093384, guid: a83cdf1a149b0c74db1b345d09893d39, type: 3}
   cameraShake: {fileID: 0}
   playerBehaviour: {fileID: 6649795209817127739}
+  sceneSwitch: {fileID: 6020612305020524307, guid: 791a952ab471d2c4b966c82515f3bd30, type: 3}
 --- !u!114 &1804890290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,6 +232,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 997e8aec34aa86a4e9c164625d75ae13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5920753688285020247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6649795209817127740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a3e319f3208a3f4f8f005eaacf99a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &7584192237196859244

@@ -14,12 +14,23 @@ public class PlayerHealth : MonoBehaviour
     Renderer render;
     Color color;
 
+    GameObject player; //things to kill on death
+    GameObject camera; //things to kill on death
+    GameObject uiCanvas; //things to kill on death
+    GameObject musicPlayer;
+
     public CameraShake cameraShake;
     public PlayerBehaviour playerBehaviour;
+    public SceneSwitch sceneSwitch;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        camera = GameObject.FindGameObjectWithTag("MainCamera");
+        uiCanvas = GameObject.FindGameObjectWithTag("UiCanvas");
+        musicPlayer = GameObject.Find("MusicPlayer");
+
         dmgFlash.enabled = false;
         currentHealth = maxHealth;
         armor = maxArmor;
@@ -49,6 +60,7 @@ public class PlayerHealth : MonoBehaviour
             {
                 armor -= 1;
                 StartCoroutine(DamageFlash());
+                StartCoroutine(IFrames());
                 return;
             }
             else if (armor == 0) // if no armor, take dmg
@@ -76,6 +88,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            currentHealth = 0;
             Kill(); // kill us if we run out of health
         }
     }
@@ -114,9 +127,12 @@ public class PlayerHealth : MonoBehaviour
         maxArmor += amount;
     }
 
-    public IEnumerator Kill()
+    public void Kill()
     {
-        yield return new WaitForSeconds(.25f);
-        Destroy(gameObject);
+        sceneSwitch.LoadDeathScene();
+        Destroy(player);
+        Destroy(camera);
+        Destroy(uiCanvas);
+        Destroy(musicPlayer);
     }
 }

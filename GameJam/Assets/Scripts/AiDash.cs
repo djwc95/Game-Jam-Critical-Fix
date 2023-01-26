@@ -30,6 +30,11 @@ public class AiDash : MonoBehaviour
     }
     void Update()
     {
+        if (player == null)
+        {
+            return;
+        }
+
         currentDistance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
         direction.Normalize();
